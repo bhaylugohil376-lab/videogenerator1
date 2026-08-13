@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Video Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="navbar">
+    <div class="logo">🎬 AI Video</div>
+    <button class="login-btn">Login</button>
+  </header>
+
+  <main class="container">
+
+    <section class="hero">
+      <h1>Create Videos with AI</h1>
+      <p>Turn your ideas into videos using artificial intelligence.</p>
+    </section>
+
+    <section class="generator">
+
+      <label for="prompt">Describe your video</label>
+
+      <textarea
+        id="prompt"
+        placeholder="Example: A cinematic sunset over the mountains..."
+        maxlength="1000"
+      ></textarea>
+
+      <div class="options">
+
+        <div>
+          <label for="ratio">Aspect Ratio</label>
+          <select id="ratio">
+            <option value="16:9">16:9 Landscape</option>
+            <option value="9:16">9:16 Portrait</option>
+            <option value="1:1">1:1 Square</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="duration">Duration</label>
+          <select id="duration">
+            <option value="5">5 Seconds</option>
+            <option value="10">10 Seconds</option>
+          </select>
+        </div>
+
+      </div>
+
+      <button id="generateBtn" class="generate-btn">
+        Generate Video
+      </button>
+
+      <div id="status" class="status"></div>
+
+      <div id="result" class="result hidden">
+        <h2>Your Video</h2>
+        <video id="videoPlayer" controls></video>
+        <a id="downloadBtn" class="download-btn" download>
+          Download Video
+        </a>
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2026 AI Video Generator</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
