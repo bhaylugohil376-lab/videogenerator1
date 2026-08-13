@@ -1,0 +1,12 @@
+{
+  "name": "ai-video-generator",
+  "version": "1.0.0",
+  "description": "AI Video Generator website",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
