@@ -1,0 +1,44 @@
+const express = require("express");
+const path = require("path");
+
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+app.use(express.json());
+app.use(express.static(path.join(__dirname, "..")));
+
+app.post("/api/generate-video", async (req, res) => {
+  try {
+    const { prompt, aspectRatio, duration } = req.body;
+
+    if (!prompt) {
+      return res.status(400).json({
+        error: "Prompt is required."
+      });
+    }
+
+    /*
+      REAL AI VIDEO API YAHAN CONNECT HOGI.
+
+      API key ko GitHub code me directly mat likhna.
+      Environment variable use karna:
+      
+      process.env.VIDEO_API_KEY
+    */
+
+    return res.status(501).json({
+      error: "AI video API is not connected yet."
+    });
+
+  } catch (error) {
+    console.error(error);
+
+    res.status(500).json({
+      error: "Server error."
+    });
+  }
+});
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
